@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'serif': ['Crimson Text', 'serif'],
+				'body': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -43,6 +47,10 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
+				},
+				cultural: {
+					DEFAULT: 'hsl(var(--cultural))',
+					foreground: 'hsl(var(--cultural-foreground))'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
