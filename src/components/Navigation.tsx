@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "Видеолар", href: "#videos" },
-    { label: "Методика", href: "#methodology" },
-    { label: "Глоссарий", href: "#glossary" },
-    { label: "Пайдаланылған әдебиеттер", href: "#references" },
+    { label: "Басты бет", href: "/" },
+    { label: "Видеолар", href: "/videos" },
+    { label: "Методика", href: "/methodology" },
+    { label: "Глоссарий", href: "/glossary" },
+    { label: "Пайдаланылған әдебиеттер", href: "/references" },
+    { label: "Тесттер", href: "/tests" },
   ];
 
   return (
@@ -29,13 +32,13 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="nav-link text-sm font-medium py-2"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -55,14 +58,14 @@ const Navigation = () => {
           <div className="md:hidden border-t border-border">
             <div className="py-4 space-y-3">
               {menuItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="block nav-link text-sm font-medium py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
